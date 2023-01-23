@@ -3,16 +3,18 @@ html {
 }
 
 body {
-  background-color: $color-base-100;
-  background-size: cover;
-  background-position: top;
-  color: white;
+  background-color: $color-base-200;
+  color: $color-base-900;
   font-family: $font-body;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.6;
-  margin: 0 auto;
+  padding: 1.5em;
   @include fadein;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 1em;
+  }
 }
 
 img {
@@ -23,11 +25,10 @@ a {
   cursor: pointer;
   transition: opacity 0.2s ease-in-out;
   text-decoration: none;
-  opacity: .7;
-  color: white !important;
+  opacity: 1;
+  color: $color-primary-400;
 
   &:hover {
-    opacity: 1;
-    color: white !important;
+    opacity: .7;
   }
 }
