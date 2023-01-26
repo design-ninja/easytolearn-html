@@ -1,1 +1,1 @@
-This is Lang.app landing page
+This is EasyToLearn static html landing page
