@@ -109,12 +109,10 @@
   &__image {
     width: 100%;
     height: auto;
-    object-fit: cover;
     border-radius: .5em;
-    aspect-ratio: 3/2;
+    aspect-ratio: 16/9;
     background-color: $color-base-200;
-    filter: brightness(98%);
-    overflow: hidden;
+    border: 2px solid $color-base-200;
   }
 
   &__content {

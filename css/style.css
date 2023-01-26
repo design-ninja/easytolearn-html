@@ -329,13 +329,10 @@ a:hover {
 .project__image {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
   border-radius: 0.5em;
-  aspect-ratio: 3/2;
+  aspect-ratio: 16/9;
   background-color: hsl(221deg, 18%, 98%);
-  filter: brightness(98%);
-  overflow: hidden;
+  border: 2px solid hsl(221deg, 18%, 98%);
 }
 .project__content {
   display: flex;
