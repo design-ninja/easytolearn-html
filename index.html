@@ -5,78 +5,83 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Easily learn foreign languages while watching your favorite Youtube videos" />
+  <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="author" content="lirik" />
-  <link rel="shortcut icon" href="favicon.png" />
+  <link rel="shortcut icon" href="favicon.svg" />
   <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <title>Language Project</title>
+  <title>EasyToLearn</title>
 </head>
 
 <body>
+  <div class="background" />
+  <header class="header">
+    <span class="logo">EasyToLearn</span>
+  </header>
   <main class="container">
     <div class="wrap">
-      <div class="hero">
-        <img src="img/logo.svg" class="logo" alt="Language Project" />
-        <h1 class="hero__title">We are building a set of tools for foreign language teachers and learners</h1>
-        <div class="hero__text">
-          <p>We believe that teachers will not be replaced by AI, <span class="marked">but 98.7% of their routine work will.</span></p>
-          <p>We believe that students <span class="marked">can and should do a lot themselves to master a language,</span> and with help of technology they can.</p>
-          <p><span class="marked">Let teacher be a motivator, guide, inspiration, and a friend,</span> and computers can do all the dirty work.</p>
-        </div>
-        <div class="hero__actions">
-          <button class="button button_icon">
-            <img src="img/google_chrome_icon.svg" alt="Google Chrome icon" />
-            <span>Install for free</span>
-          </button>
-        </div>
-      </div>
-      <div class="projects">
-        <div class="project">
-          <div class="project__image">
-            <img src="img/dummy_project.png" alt="Project 1" />
-          </div>
-          <div class="project__text">
-            <h2><a href="#" title="Project 1">Project 1</a></h2>
-            <p>
-              We are building a tool that will allow you to learn foreign languages while watching your favorite Youtube videos
-            </p>
+      <section class="section centered">
+        <div class="hero">
+          <h1 class="hero__title">We are building a set of tools for foreign language teachers and learners</h1>
+          <div class="hero__text">
+            <p>We believe that teachers will not be replaced by AI, <span class="marked">but 98.7% of their routine work will.</span></p>
+            <p>We believe that students <span class="marked">can and should do a lot themselves to master a language,</span> and with help of technology they can.</p>
+            <p><span class="marked">Let teacher be a motivator, guide, inspiration, and a friend,</span> and computers can do all the dirty work.</p>
           </div>
         </div>
-        <div class="project">
-          <div class="project__image">
-            <img src="img/dummy_project.png" alt="Project 2" />
+      </section>
+      <section class="section">
+        <h2 class="centered">Our projects</h2>
+        <div class="projects">
+          <div class="project">
+            <div class="project__image">
+              <img src="img/projects/langapp.jpg" alt="Project 1" />
+            </div>
+            <div class="project__content">
+              <h3 class="project__title">Lang.app</h3>
+              <p class="project__description">
+                Learn any language using any YouTube video! Access to subtitles in a foreign language, save and review new words and phrases, quick dictionary lookup.
+              </p>
+              <button class="button button_fluid">View project</button>
+            </div>
           </div>
-          <div class="project__text">
-            <h2><a href="#" title="Project 2">Project 2</a></h2>
-            <p>
-              We are building a tool that will allow you to learn foreign languages while watching your favorite Youtube videos
-            </p>
+          <div class="project">
+            <div class="project__image">
+              <img src="img/projects/textmastery.jpg" alt="Project 2" />
+            </div>
+            <div class="project__content">
+              <h3 class="project__title">TextMastery Tutor</h3>
+              <p class="project__description">
+                Empower your language teaching with TextMastery Tutor. Generate engaging reading materials and simplify texts for your students.
+              </p>
+              <button class="button button_fluid">View project</button>
+            </div>
           </div>
         </div>
-        <div class="project">
-          <div class="project__image">
-            <img src="img/dummy_project.png" alt="Project 3" />
-          </div>
-          <div class="project__text">
-            <h2><a href="#" title="Project 3">Project 3</a></h2>
-            <p>
-              We are building a tool that will allow you to learn foreign languages while watching your favorite Youtube videos
-            </p>
-          </div>
+      </section>
+      <section class="section">
+        <div class="newsletter centered">
+          <h3 class="newsletter__title">Subscribe to our newsletter</h3>
+          <p class="newsletter__text">Subscribe for occasional updates (we will not use your e-mail for any other purpose)</p>
+          <form class="newsletter__form">
+            <input type="email" placeholder="Your email" class="newsletter__input">
+            <button class="button button_secondary">Subscribe</button>
+          </form>
         </div>
-      </div>
-      <footer class="footer">
-        <div class="footer__text">
-          This site and apps are developed by Maigic Web Solutions, a company which created <a href="#" title="Kanbanchi">Kanbanchi</a> and  helped to launch <a href="#" title="Contentcal">Contentcal</a>
-        </div>
-        <div class="footer__links">
-          <a href="https://easytolearn.io/privacy_policy" title="Privacy policy">Privacy policy</a>
-          <a href="https://easytolearn.io/#rec484876315" title="Blog">Blog</a>
-        </div>
-      </footer>
+      </section>
     </div>
   </main>
+  <footer class="footer">
+    <div class="footer__text">
+      This site and apps are developed by Maigic Web Solutions, a company which created <a href="#" title="Kanbanchi">Kanbanchi</a> and  helped to launch <a href="#" title="Contentcal">Contentcal</a>
+    </div>
+    <div class="footer__links">
+      <a href="#" title="About the company">About the company</a>
+      <a href="#" title="Our team">Our team</a>
+      <a href="https://easytolearn.io/privacy_policy" title="Privacy policy">Privacy policy</a>
+      <a href="https://easytolearn.io/#rec484876315" title="Blog">Blog</a>
+    </div>
+  </footer>
 </body>
 
 </html>

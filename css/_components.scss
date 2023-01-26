@@ -4,9 +4,13 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  padding: 4em 3em;
-  background-color: $color-base-100;
+  padding: 3em;
   border-radius: 1em;
+  max-width: 60em;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 2em;
+  }
 }
 
 .wrap {
@@ -16,16 +20,33 @@
   gap: 3em;
 }
 
-.hero {
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 5em;
+
+  @include shadow-sm;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: $color-secondary-400;
+  cursor: default;
+}
+
+.section {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2em;
-  text-align: center;
 }
 
-.logo {
-  margin-bottom: 2em;
+.hero {
+  &__text {
+    font-size: 1.25rem;
+  }
 }
 
 .footer {
@@ -33,11 +54,22 @@
   flex-direction: column;
   align-items: center;
   gap: 1em;
-  margin-top: 2em;
+  padding: 2em;
+  margin-top: 1em;
+  background-color: $color-base-200;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 2em;
+  }
 
   &__links {
     display: flex;
-    gap: 1em;
+    gap: 1.5em;
+
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__text {
@@ -48,7 +80,9 @@
 
 .projects {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
   gap: 2em;
 
   @media (max-width: $breakpoint-tablet) {
@@ -60,12 +94,13 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
-  padding: 1.5em;
+  padding: 2em;
   border-radius: .5em;
   background-color: $color-base-100;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.2s ease-in-out;
   cursor: pointer;
+
+  @include shadow-md;
 
   &:hover {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -82,13 +117,15 @@
     overflow: hidden;
   }
 
-  &__title {
-    font-size: 1.5em;
-    font-weight: bold;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 
   &__description {
-    opacity: .7;
+    flex: 1;
+    margin-bottom: 2em;
   }
 }
 
@@ -99,10 +136,9 @@
   justify-content: center;
   align-items: center;
   gap: .75em;
-
-  height: 64px;
-  padding: 0 2em;
-  border-radius: .5em;
+  padding: 1em;
+  height: 3em;
+  border-radius: .375em;
   background-color: $color-primary-400;
   color: $color-base-100;
   font-size: 1.125rem;
@@ -110,8 +146,8 @@
   text-align: center;
   transition: background-color 0.2s ease-in-out;
 
-  &_icon {
-    padding-left: 1.75em;
+  &_fluid{
+    width: 100%;
   }
   
   &:hover {
@@ -128,9 +164,83 @@
     color: $color-base-700;
     cursor: not-allowed;
   }
+
+  &_secondary {
+    background-color: $color-secondary-400;
+
+    &:hover {
+      background-color: darken($color-secondary-400, 10%);
+      cursor: pointer;
+    }
+  }
 }
 
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3em;
+  border-radius: .5em;
+  max-width: 32em;
+  background-color: rgba($color-base-100, .25);
+
+  @include shadow-md;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 2em;
+  }
+
+  &__title {
+    margin-bottom: 0.5em;
+  }
+
+  &__text {
+    margin-bottom: 1em;
+  }
+
+  &__form {
+    display: flex;
+    gap: 1.25em;
+    margin-top: 1em;
+    width: 100%;
+
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__input {
+    flex: 1;
+    padding: 1em;
+    border: 1px solid $color-base-300;
+    border-radius: .5em;
+    font-size: 1rem;
+    height: 1.25em;
+
+    &::placeholder {
+      color: $color-base-300;
+    }
+  }
+
+  @media (max-width: 600px) {
+    text-align: left;
+  }
+}
+
+
+// Utility classes
 .marked {
   background-color: $color-warning-100;
   padding: .25em;
+}
+
+.centered {
+  text-align: center;
+}
+
+.background {
+  background: linear-gradient(rgb(white,0.3), rgb(white,0.3)), url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }

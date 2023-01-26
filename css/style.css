@@ -144,14 +144,26 @@ h6 {
 h1 {
   font-size: 3rem;
   line-height: 1.2;
+  margin-bottom: 1em;
+}
+@media (max-width: 860px) {
+  h1 {
+    font-size: 2.25rem;
+  }
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 2.25rem;
+  margin-bottom: 0.25em;
+}
+@media (max-width: 860px) {
+  h2 {
+    font-size: 2rem;
+  }
 }
 
 h3 {
-  font-size: 1.125rem;
+  font-size: 1.5rem;
 }
 
 p {
@@ -184,20 +196,14 @@ html {
 }
 
 body {
-  background-color: hsl(221deg, 18%, 95%);
   color: hsl(221deg, 18%, 15%);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 16px;
   font-weight: normal;
   line-height: 1.6;
-  padding: 1.5em;
+  min-height: 100%;
   -webkit-animation: 1.5s ease-out 0s 1 fadein;
           animation: 1.5s ease-out 0s 1 fadein;
-}
-@media (max-width: 860px) {
-  body {
-    padding: 1em;
-  }
 }
 
 img {
@@ -209,7 +215,7 @@ a {
   transition: opacity 0.2s ease-in-out;
   text-decoration: none;
   opacity: 1;
-  color: hsl(165deg, 64%, 45%);
+  color: hsl(179deg, 50%, 40%);
 }
 a:hover {
   opacity: 0.7;
@@ -221,9 +227,14 @@ a:hover {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  padding: 4em 3em;
-  background-color: hsl(221deg, 18%, 100%);
+  padding: 3em;
   border-radius: 1em;
+  max-width: 60em;
+}
+@media (max-width: 860px) {
+  .container {
+    padding: 2em;
+  }
 }
 
 .wrap {
@@ -233,16 +244,30 @@ a:hover {
   gap: 3em;
 }
 
-.hero {
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 5em;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: hsl(259deg, 60%, 60%);
+  cursor: default;
+}
+
+.section {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2em;
-  text-align: center;
 }
 
-.logo {
-  margin-bottom: 2em;
+.hero__text {
+  font-size: 1.25rem;
 }
 
 .footer {
@@ -250,20 +275,35 @@ a:hover {
   flex-direction: column;
   align-items: center;
   gap: 1em;
-  margin-top: 2em;
+  padding: 2em;
+  margin-top: 1em;
+  background-color: hsl(221deg, 18%, 98%);
+}
+@media (max-width: 860px) {
+  .footer {
+    padding: 2em;
+  }
 }
 .footer__links {
   display: flex;
-  gap: 1em;
+  gap: 1.5em;
+}
+@media (max-width: 860px) {
+  .footer__links {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .footer__text {
   text-align: center;
-  color: hsl(221deg, 18%, 65%);
+  color: hsl(221deg, 18%, 80%);
 }
 
 .projects {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
   gap: 2em;
 }
 @media (max-width: 860px) {
@@ -276,12 +316,12 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  padding: 1.5em;
+  padding: 2em;
   border-radius: 0.5em;
   background-color: hsl(221deg, 18%, 100%);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.2s ease-in-out;
   cursor: pointer;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 .project:hover {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -293,16 +333,18 @@ a:hover {
      object-fit: cover;
   border-radius: 0.5em;
   aspect-ratio: 3/2;
-  background-color: hsl(221deg, 18%, 95%);
+  background-color: hsl(221deg, 18%, 98%);
   filter: brightness(98%);
   overflow: hidden;
 }
-.project__title {
-  font-size: 1.5em;
-  font-weight: bold;
+.project__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 .project__description {
-  opacity: 0.7;
+  flex: 1;
+  margin-bottom: 2em;
 }
 
 .button {
@@ -326,33 +368,106 @@ a:hover {
   justify-content: center;
   align-items: center;
   gap: 0.75em;
-  height: 64px;
-  padding: 0 2em;
-  border-radius: 0.5em;
-  background-color: hsl(165deg, 64%, 45%);
+  padding: 1em;
+  height: 3em;
+  border-radius: 0.375em;
+  background-color: hsl(179deg, 50%, 40%);
   color: hsl(221deg, 18%, 100%);
   font-size: 1.125rem;
   font-weight: 500;
   text-align: center;
   transition: background-color 0.2s ease-in-out;
 }
-.button_icon {
-  padding-left: 1.75em;
+.button_fluid {
+  width: 100%;
 }
 .button:hover {
-  background-color: #209276;
+  background-color: #267371;
   cursor: pointer;
 }
 .button:active {
-  background-color: #43d6b1;
+  background-color: #40bfbd;
 }
 .button:disabled {
   background-color: hsl(221deg, 18%, 45%);
   color: hsl(221deg, 18%, 35%);
   cursor: not-allowed;
 }
+.button_secondary {
+  background-color: hsl(259deg, 60%, 60%);
+}
+.button_secondary:hover {
+  background-color: #6333cc;
+  cursor: pointer;
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3em;
+  border-radius: 0.5em;
+  max-width: 32em;
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+@media (max-width: 860px) {
+  .newsletter {
+    padding: 2em;
+  }
+}
+.newsletter__title {
+  margin-bottom: 0.5em;
+}
+.newsletter__text {
+  margin-bottom: 1em;
+}
+.newsletter__form {
+  display: flex;
+  gap: 1.25em;
+  margin-top: 1em;
+  width: 100%;
+}
+@media (max-width: 860px) {
+  .newsletter__form {
+    flex-direction: column;
+  }
+}
+.newsletter__input {
+  flex: 1;
+  padding: 1em;
+  border: 1px solid hsl(221deg, 18%, 80%);
+  border-radius: 0.5em;
+  font-size: 1rem;
+  height: 1.25em;
+}
+.newsletter__input::-moz-placeholder {
+  color: hsl(221deg, 18%, 80%);
+}
+.newsletter__input:-ms-input-placeholder {
+  color: hsl(221deg, 18%, 80%);
+}
+.newsletter__input::placeholder {
+  color: hsl(221deg, 18%, 80%);
+}
+@media (max-width: 600px) {
+  .newsletter {
+    text-align: left;
+  }
+}
 
 .marked {
   background-color: hsl(43deg, 93%, 90%);
   padding: 0.25em;
+}
+
+.centered {
+  text-align: center;
+}
+
+.background {
+  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }/*# sourceMappingURL=style.css.map */

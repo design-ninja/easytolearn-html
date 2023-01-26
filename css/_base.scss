@@ -3,18 +3,14 @@ html {
 }
 
 body {
-  background-color: $color-base-200;
   color: $color-base-900;
   font-family: $font-body;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.6;
-  padding: 1.5em;
-  @include fadein;
+  min-height: 100%;
 
-  @media (max-width: $breakpoint-tablet) {
-    padding: 1em;
-  }
+  @include fadein;
 }
 
 img {
