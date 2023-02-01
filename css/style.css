@@ -231,7 +231,7 @@ a:hover {
   margin: 0 auto;
   padding: 3em;
   border-radius: 1em;
-  max-width: 60em;
+  max-width: 64em;
 }
 @media (max-width: 860px) {
   .container {
@@ -290,9 +290,8 @@ a:hover {
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  align-items: center;
-  gap: 2em;
+  grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
+  gap: 1.5em;
 }
 @media (max-width: 860px) {
   .projects {
