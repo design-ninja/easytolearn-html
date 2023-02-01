@@ -166,6 +166,10 @@ h3 {
   font-size: 1.5rem;
 }
 
+h4 {
+  font-size: 1.15rem;
+}
+
 p {
   margin: 1em 0;
 }
@@ -222,10 +226,8 @@ a:hover {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  gap: 2em;
   margin: 0 auto;
   padding: 3em;
   border-radius: 1em;
@@ -237,13 +239,6 @@ a:hover {
   }
 }
 
-.wrap {
-  max-width: 80em;
-  display: flex;
-  flex-direction: column;
-  gap: 3em;
-}
-
 .header {
   display: flex;
   justify-content: center;
@@ -252,18 +247,12 @@ a:hover {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
-.logo {
-  font-size: 1.5em;
-  font-weight: 600;
-  color: hsl(259deg, 60%, 60%);
-  cursor: default;
-}
-
 .section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
   gap: 2em;
+}
+.section_centered {
+  justify-content: center;
 }
 
 .hero__text {
@@ -301,9 +290,8 @@ a:hover {
 
 .projects {
   display: grid;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
   gap: 2em;
 }
 @media (max-width: 860px) {
@@ -452,6 +440,42 @@ a:hover {
   .newsletter {
     text-align: left;
   }
+}
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: stretch;
+  gap: 1.5em;
+}
+
+.person {
+  display: grid;
+  border-radius: 0.5em;
+  background-color: hsl(221deg, 18%, 100%);
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.person__image {
+  background-color: hsl(221deg, 18%, 98%);
+  aspect-ratio: 4/3;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.person__content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em 2em;
+}
+.person__info {
+  display: flex;
+  flex-direction: column;
+}
+.person__job {
+  opacity: 0.4;
+}
+.person__contact {
+  margin: 0;
 }
 
 .marked {

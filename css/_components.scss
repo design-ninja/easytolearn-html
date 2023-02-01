@@ -1,8 +1,6 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  gap: 2em;
   margin: 0 auto;
   padding: 3em;
   border-radius: 1em;
@@ -11,13 +9,6 @@
   @media (max-width: $breakpoint-tablet) {
     padding: 2em;
   }
-}
-
-.wrap {
-  max-width: 80em;
-  display: flex;
-  flex-direction: column;
-  gap: 3em;
 }
 
 .header {
@@ -29,18 +20,13 @@
   @include shadow-sm;
 }
 
-.logo {
-  font-size: 1.5em;
-  font-weight: 600;
-  color: $color-secondary-400;
-  cursor: default;
-}
-
 .section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
   gap: 2em;
+
+  &_centered {
+    justify-content: center;
+  }
 }
 
 .hero {
@@ -80,9 +66,8 @@
 
 .projects {
   display: grid;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
   gap: 2em;
 
   @media (max-width: $breakpoint-tablet) {
@@ -223,6 +208,47 @@
 
   @media (max-width: 600px) {
     text-align: left;
+  }
+}
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: stretch;
+  gap: 1.5em;
+}
+
+.person {
+  display: grid;
+  border-radius: .5em;
+  background-color: $color-base-100;
+  overflow: hidden;
+
+  @include shadow-md;
+
+  &__image {
+    background-color: $color-base-200;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em 2em;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__job {
+    opacity: 0.4;
+  }
+
+  &__contact {
+    margin: 0;
   }
 }
 
