@@ -449,7 +449,8 @@ a:hover {
 }
 
 .person {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   border-radius: 0.5em;
   background-color: hsl(221deg, 18%, 100%);
   overflow: hidden;
@@ -460,15 +461,20 @@ a:hover {
   aspect-ratio: 4/3;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
 }
 .person__content {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 1.5em 2em;
+  flex: 1;
 }
 .person__info {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 .person__job {
   opacity: 0.4;
